@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Peso em Toneladas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .input-group {
+      margin-bottom: 10px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    #resultado {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de Peso em Toneladas</h1>
+    
+    <div class="input-group">
+      <label for="pesoKg">Digite o peso em quilogramas:</label>
+      <input type="number" id="pesoKg" placeholder="Digite o peso em kg">
+    </div>
+    
+    <button onclick="calcularPeso()">Calcular Peso em Toneladas</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function calcularPeso() {
+      const pesoKg = parseFloat(document.getElementById('pesoKg').value);
+      if (isNaN(pesoKg)) {
+        alert('Por favor, insira um valor válido para o peso em quilogramas.');
+        return;
+      }
+
+      const pesoToneladas = pesoKg / 1000;
+      document.getElementById('resultado').innerText = `O peso em toneladas é: ${pesoToneladas} toneladas`;
+    }
+  </script>
+</body>
+</html>
